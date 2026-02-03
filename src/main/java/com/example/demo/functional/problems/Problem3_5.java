@@ -21,8 +21,11 @@ public class Problem3_5 {
 				.forEach(System.out::println);
 		
 		System.out.println("---- With comma Seperated----------");
-		employeeList.stream().filter(e -> e.getYearOfJoining() > 2015).map(Employee::getName)
-				.collect(Collectors.joining(", ")).concat(getName);
-//				.forEach(System.out::println);
+		String joinedNames = employeeList.stream()
+				.filter(e -> e.getYearOfJoining() > 2015)
+				.map(Employee::getName)
+				.collect(Collectors.joining(", "));
+
+		System.out.println(joinedNames);
 	}
 }
